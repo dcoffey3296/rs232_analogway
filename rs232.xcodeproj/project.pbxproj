@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F4FE117197DF14900F7ADCF /* inc in Resources */ = {isa = PBXBuildFile; fileRef = 8F4FE116197DF14900F7ADCF /* inc */; };
+		8F4FE11D197E02C500F7ADCF /* libRscMgrUniv.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F4FE11C197E02C500F7ADCF /* libRscMgrUniv.a */; };
 		8F8308BB197DE77B002A8887 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F8308BA197DE77B002A8887 /* main.m */; };
 		8F8308BE197DE77B002A8887 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F8308BD197DE77B002A8887 /* AppDelegate.m */; };
 		8F8308C1197DE77B002A8887 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F8308C0197DE77B002A8887 /* ViewController.m */; };
@@ -26,6 +28,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8F4FE116197DF14900F7ADCF /* inc */ = {isa = PBXFileReference; lastKnownFileType = folder; path = inc; sourceTree = "<group>"; };
+		8F4FE11C197E02C500F7ADCF /* libRscMgrUniv.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libRscMgrUniv.a; sourceTree = "<group>"; };
 		8F8308B5197DE77B002A8887 /* rs232.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rs232.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F8308B9197DE77B002A8887 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8F8308BA197DE77B002A8887 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -45,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F4FE11D197E02C500F7ADCF /* libRscMgrUniv.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +66,7 @@
 		8F8308AC197DE77B002A8887 = {
 			isa = PBXGroup;
 			children = (
+				8F4FE11C197E02C500F7ADCF /* libRscMgrUniv.a */,
 				8F8308B7197DE77B002A8887 /* rs232 */,
 				8F8308CE197DE77B002A8887 /* rs232Tests */,
 				8F8308B6197DE77B002A8887 /* Products */,
@@ -83,6 +89,7 @@
 				8F8308BD197DE77B002A8887 /* AppDelegate.m */,
 				8F8308BF197DE77B002A8887 /* ViewController.h */,
 				8F8308C0197DE77B002A8887 /* ViewController.m */,
+				8F4FE116197DF14900F7ADCF /* inc */,
 				8F8308C2197DE77B002A8887 /* Main.storyboard */,
 				8F8308C5197DE77B002A8887 /* Images.xcassets */,
 				8F8308B8197DE77B002A8887 /* Supporting Files */,
@@ -196,6 +203,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F4FE117197DF14900F7ADCF /* inc in Resources */,
 				8F8308C4197DE77B002A8887 /* Main.storyboard in Resources */,
 				8F8308C6197DE77B002A8887 /* Images.xcassets in Resources */,
 			);
@@ -332,22 +340,44 @@
 		8F8308D6197DE77B002A8887 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/rs232",
+				);
 				INFOPLIST_FILE = rs232/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Debug;
 		};
 		8F8308D7197DE77B002A8887 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/rs232",
+				);
 				INFOPLIST_FILE = rs232/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Release;
 		};
@@ -406,6 +436,7 @@
 				8F8308D7197DE77B002A8887 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8F8308D8197DE77B002A8887 /* Build configuration list for PBXNativeTarget "rs232Tests" */ = {
 			isa = XCConfigurationList;
@@ -414,6 +445,7 @@
 				8F8308DA197DE77B002A8887 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
