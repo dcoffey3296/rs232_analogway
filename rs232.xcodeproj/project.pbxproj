@@ -11,7 +11,7 @@
 		8F4FE11D197E02C500F7ADCF /* libRscMgrUniv.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F4FE11C197E02C500F7ADCF /* libRscMgrUniv.a */; };
 		8F8308BB197DE77B002A8887 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F8308BA197DE77B002A8887 /* main.m */; };
 		8F8308BE197DE77B002A8887 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F8308BD197DE77B002A8887 /* AppDelegate.m */; };
-		8F8308C1197DE77B002A8887 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F8308C0197DE77B002A8887 /* ViewController.m */; };
+		8F8308C1197DE77B002A8887 /* mViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F8308C0197DE77B002A8887 /* mViewController.m */; };
 		8F8308C4197DE77B002A8887 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F8308C2197DE77B002A8887 /* Main.storyboard */; };
 		8F8308C6197DE77B002A8887 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F8308C5197DE77B002A8887 /* Images.xcassets */; };
 		8F8308D2197DE77B002A8887 /* rs232Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F8308D1197DE77B002A8887 /* rs232Tests.m */; };
@@ -35,8 +35,8 @@
 		8F8308BA197DE77B002A8887 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8F8308BC197DE77B002A8887 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8F8308BD197DE77B002A8887 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		8F8308BF197DE77B002A8887 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		8F8308C0197DE77B002A8887 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		8F8308BF197DE77B002A8887 /* mViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mViewController.h; sourceTree = "<group>"; };
+		8F8308C0197DE77B002A8887 /* mViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = mViewController.m; sourceTree = "<group>"; };
 		8F8308C3197DE77B002A8887 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8F8308C5197DE77B002A8887 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8F8308CB197DE77B002A8887 /* rs232Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = rs232Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,8 +87,8 @@
 			children = (
 				8F8308BC197DE77B002A8887 /* AppDelegate.h */,
 				8F8308BD197DE77B002A8887 /* AppDelegate.m */,
-				8F8308BF197DE77B002A8887 /* ViewController.h */,
-				8F8308C0197DE77B002A8887 /* ViewController.m */,
+				8F8308BF197DE77B002A8887 /* mViewController.h */,
+				8F8308C0197DE77B002A8887 /* mViewController.m */,
 				8F4FE116197DF14900F7ADCF /* inc */,
 				8F8308C2197DE77B002A8887 /* Main.storyboard */,
 				8F8308C5197DE77B002A8887 /* Images.xcassets */,
@@ -223,7 +223,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8F8308C1197DE77B002A8887 /* ViewController.m in Sources */,
+				8F8308C1197DE77B002A8887 /* mViewController.m in Sources */,
 				8F8308BE197DE77B002A8887 /* AppDelegate.m in Sources */,
 				8F8308BB197DE77B002A8887 /* main.m in Sources */,
 			);

@@ -6,16 +6,17 @@
 //  Copyright (c) 2014 Daniel Coffey. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "mViewController.h"
 
-@interface ViewController ()
+@interface mViewController ()
 
 @end
 
-@implementation ViewController
+@implementation mViewController
 
 @synthesize texty;
 @synthesize connectLabel;
+@synthesize debugText;
 @synthesize button1;
 @synthesize button2;
 
@@ -36,6 +37,7 @@
     [rscMgr setDataSize:(DataSizeType)8];
 //    [rscMgr	setParity:(ParityType)value];
     [rscMgr setStopBits:(StopBitsType)1];
+    
 }
 
 - (void)viewDidUnload
@@ -50,19 +52,32 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)touchbutton1:(id)sender {
-    NSString *s1 = @"0,1,1,1PRinp0,1PUscu0,1GCtak";
-    uint8_t *someInt = (uint8_t *)[s1 UTF8String];
-    [rscMgr write:someInt Length:[s1 length]];
-    texty.text = s1;
+//- (IBAction)touchbutton1:(id)sender {
+//    NSString *s1 = @"0,1,1,1PRinp0,1PUscu0,1GCtak";
+//    uint8_t *someInt = (uint8_t *)[s1 UTF8String];
+//    [rscMgr write:someInt Length:[s1 length]];
+//    texty.text = s1;
+//}
+
     
-}
-- (IBAction)touchbutton2:(id)sender {
-    NSString *s1 = @"1,1,1,1PRinp1,1PUscu1,1GCtak";
-    uint8_t *someInt = (uint8_t *)[s1 UTF8String];
-    [rscMgr write:someInt Length:[s1 length]];
-    texty.text = s1;
-    
+- (IBAction)buttonPress:(id)sender {
+    NSDictionary *lookup = @{
+         [NSNumber numberWithInt:0] : @"??0",
+         [NSNumber numberWithInt:11] : @"0,1,1,1PRinp0,1PUscu0,1GCtak",
+         [NSNumber numberWithInt:12] : @"1,1,1,1PRinp1,1PUscu1,1GCtak",
+         [NSNumber numberWithInt:13] : @"??13",
+         [NSNumber numberWithInt:14] : @"??14",
+         [NSNumber numberWithInt:21] : @"??21",
+         [NSNumber numberWithInt:22] : @"??22",
+         [NSNumber numberWithInt:23] : @"??23",
+         [NSNumber numberWithInt:24] : @"??24"
+    };
+
+    NSInteger clicked = [sender tag];
+    NSLog(@"Button clicked %d, string: %@", clicked, lookup[[NSNumber numberWithInt:clicked]]);
+    uint8_t *someInt = (uint8_t *)[lookup[[NSNumber numberWithInt:clicked]] UTF8String];
+    [rscMgr write:someInt Length:[lookup[[NSNumber numberWithInt:clicked]] length]];
+    texty.text = lookup[[NSNumber numberWithInt:clicked]];
 }
 
 
