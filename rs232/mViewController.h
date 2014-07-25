@@ -11,22 +11,33 @@
 
 #define BUFFER_LEN 1024
 
+
 @interface mViewController : UIViewController <RscMgrDelegate> {
     RscMgr *rscMgr;
     UInt8 rxBuffer[BUFFER_LEN];
     UInt8 txBuffer[BUFFER_LEN];
+    
+    // globals
+    NSString *lastResult;
+    NSNumber *lastScreen1;
+    NSNumber *lastScreen2;
+    BOOL screen1Frozen;
+    BOOL screen2Frozen;
+    BOOL screen1Logo;
+    BOOL screen2Logo;
 }
 
-// set up my buttons
 
+// set up my buttons
 @property (weak, nonatomic) IBOutlet UILabel *texty;
 @property (weak, nonatomic) IBOutlet UILabel *connectLabel;
 @property (weak, nonatomic) IBOutlet UILabel *debugText;
 
 @property (weak, nonatomic) IBOutlet UIButton *button1;
-@property (weak, nonatomic) IBOutlet UIButton *button2;
 
 - (IBAction)buttonPress:(id)sender;
+
+
 
 
 @end

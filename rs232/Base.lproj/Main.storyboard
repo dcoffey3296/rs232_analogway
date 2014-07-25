@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6154.21" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.13"/>
     </dependencies>
     <scenes>
@@ -33,47 +32,13 @@
                                     <rect key="frame" x="0.0" y="439" width="480" height="21"/>
                                 </variation>
                                 <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="-57" y="452" width="435" height="21"/>
+                                    <rect key="frame" x="-57" y="458" width="435" height="21"/>
                                     <mask key="constraints">
                                         <include reference="ldX-c3-VZC"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="0.0" y="439" width="640" height="21"/>
-                                </variation>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="command placeholder" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RCv-1Q-7n2">
-                                <rect key="frame" x="0.0" y="229" width="430" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="430" id="xnb-PM-olA"/>
-                                </constraints>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="xnb-PM-olA"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="229" width="480" height="21"/>
-                                </variation>
-                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="-55" y="407" width="430" height="21"/>
-                                    <mask key="constraints">
-                                        <include reference="xnb-PM-olA"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="229" width="640" height="21"/>
-                                </variation>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="debug" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mwq-fY-JD7">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="120" y="370" width="81" height="21"/>
                                 </variation>
                             </label>
                             <button opaque="NO" tag="11" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="foobar" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BDK-3H-czO" userLabel="xfoo">
@@ -239,27 +204,111 @@
                                     <color key="titleShadowColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="99" y="315" width="123" height="47"/>
+                                    <rect key="frame" x="38" y="300" width="123" height="47"/>
                                 </variation>
                                 <connections>
                                     <action selector="buttonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nlr-bs-nlV"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8VV-Gt-6xb">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            <button opaque="NO" tag="19" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="foobar" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ymX-uT-nnd" userLabel="xfoo">
+                                <rect key="frame" x="43" y="63" width="59" height="30"/>
+                                <color key="backgroundColor" red="0.40174932070000002" green="0.40174932070000002" blue="0.40174932070000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <accessibility key="accessibilityConfiguration" label="foolabel"/>
+                                <color key="tintColor" red="0.95490500410000001" green="1" blue="0.98627566680000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Freeze">
+                                    <color key="titleShadowColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="176" y="0.0" width="46" height="30"/>
+                                    <rect key="frame" x="19" y="352" width="124" height="47"/>
                                 </variation>
+                                <connections>
+                                    <action selector="buttonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KAL-Vc-Di3"/>
+                                </connections>
                             </button>
+                            <button opaque="NO" tag="10" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="foobar" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kQP-vj-TMM" userLabel="xfoo">
+                                <rect key="frame" x="43" y="63" width="59" height="30"/>
+                                <color key="backgroundColor" red="0.40174932070000002" green="0.40174932070000002" blue="0.40174932070000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <accessibility key="accessibilityConfiguration" label="foolabel"/>
+                                <color key="tintColor" red="0.95490500410000001" green="1" blue="0.98627566680000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Logo">
+                                    <color key="titleShadowColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="18" y="407" width="124" height="47"/>
+                                </variation>
+                                <connections>
+                                    <action selector="buttonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RcT-gj-2t1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="10" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="foobar" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8fe-oK-YDk" userLabel="xfoo">
+                                <rect key="frame" x="43" y="63" width="59" height="30"/>
+                                <color key="backgroundColor" red="0.40174932070000002" green="0.40174932070000002" blue="0.40174932070000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <accessibility key="accessibilityConfiguration" label="foolabel"/>
+                                <color key="tintColor" red="0.95490500410000001" green="1" blue="0.98627566680000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Logo">
+                                    <color key="titleShadowColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="176" y="407" width="124" height="47"/>
+                                </variation>
+                                <connections>
+                                    <action selector="buttonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rdE-hk-Mde"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="29" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="foobar" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Li-0C-FQF" userLabel="xfoo">
+                                <rect key="frame" x="43" y="63" width="59" height="30"/>
+                                <color key="backgroundColor" red="0.40174932070000002" green="0.40174932070000002" blue="0.40174932070000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <accessibility key="accessibilityConfiguration" label="foolabel"/>
+                                <color key="tintColor" red="0.95490500410000001" green="1" blue="0.98627566680000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Freeze">
+                                    <color key="titleShadowColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="176" y="352" width="124" height="47"/>
+                                </variation>
+                                <connections>
+                                    <action selector="buttonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5so-d9-XOJ"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="command placeholder" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RCv-1Q-7n2">
+                                <rect key="frame" x="0.0" y="229" width="430" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="430" id="xnb-PM-olA"/>
+                                </constraints>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="xnb-PM-olA"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="229" width="480" height="21"/>
+                                </variation>
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="-65" y="14" width="430" height="21"/>
+                                    <mask key="constraints">
+                                        <include reference="xnb-PM-olA"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="229" width="640" height="21"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="debug" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yTz-Mo-TiD">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="176" y="313" width="129" height="21"/>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="Mwq-fY-JD7"/>
                                 <exclude reference="Idt-ou-jeB"/>
                                 <exclude reference="yKc-NT-2gI"/>
                                 <exclude reference="IyR-nP-tPP"/>
@@ -270,12 +319,15 @@
                                 <exclude reference="CFW-lw-YnU"/>
                                 <exclude reference="fWS-Hs-BYn"/>
                                 <exclude reference="222-NX-crq"/>
-                                <exclude reference="8VV-Gt-6xb"/>
+                                <exclude reference="ymX-uT-nnd"/>
+                                <exclude reference="kQP-vj-TMM"/>
+                                <exclude reference="8fe-oK-YDk"/>
+                                <exclude reference="5Li-0C-FQF"/>
+                                <exclude reference="yTz-Mo-TiD"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
-                                <include reference="Mwq-fY-JD7"/>
                                 <include reference="Idt-ou-jeB"/>
                                 <include reference="yKc-NT-2gI"/>
                                 <include reference="IyR-nP-tPP"/>
@@ -286,197 +338,24 @@
                                 <include reference="CFW-lw-YnU"/>
                                 <include reference="fWS-Hs-BYn"/>
                                 <include reference="222-NX-crq"/>
-                                <include reference="8VV-Gt-6xb"/>
+                                <include reference="ymX-uT-nnd"/>
+                                <include reference="kQP-vj-TMM"/>
+                                <include reference="8fe-oK-YDk"/>
+                                <include reference="5Li-0C-FQF"/>
+                                <include reference="yTz-Mo-TiD"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
                         <outlet property="button1" destination="BDK-3H-czO" id="0bh-5l-Jwc"/>
                         <outlet property="connectLabel" destination="sVC-9k-xVF" id="LUd-pC-a0X"/>
+                        <outlet property="debugText" destination="yTz-Mo-TiD" id="HG1-QO-UBt"/>
                         <outlet property="texty" destination="RCv-1Q-7n2" id="WRY-zO-tq7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="154.5" y="150"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="GgG-3y-ubL">
-            <objects>
-                <viewController storyboardIdentifier="foobar" id="vbf-bd-y8G" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="MRF-IN-36R"/>
-                        <viewControllerLayoutGuide type="bottom" id="VNJ-Hy-zyf"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8l2-V0-E9Y">
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" tag="11" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="foobar" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BCR-JX-Nb2" userLabel="xfoo">
-                                <rect key="frame" x="43" y="63" width="59" height="30"/>
-                                <color key="backgroundColor" red="0.40174932070000002" green="0.40174932070000002" blue="0.40174932070000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <accessibility key="accessibilityConfiguration" label="foolabel"/>
-                                <color key="tintColor" red="0.95490500410000001" green="1" blue="0.98627566680000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Button 1">
-                                    <color key="titleShadowColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="40" y="76" width="123" height="47"/>
-                                </variation>
-                            </button>
-                            <button opaque="NO" tag="12" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="foobar" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o0o-Ix-Jpl" userLabel="xfoo">
-                                <rect key="frame" x="43" y="63" width="59" height="30"/>
-                                <color key="backgroundColor" red="0.40174932070000002" green="0.40174932070000002" blue="0.40174932070000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <accessibility key="accessibilityConfiguration" label="foolabel"/>
-                                <color key="tintColor" red="0.95490500410000001" green="1" blue="0.98627566680000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Button 1">
-                                    <color key="titleShadowColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="40" y="131" width="123" height="47"/>
-                                </variation>
-                            </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xEO-2x-evk">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="PROJECTOR">
-                                        <attributes>
-                                            <color key="NSColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                            <font key="NSFont" size="17" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="36"/>
-                                    <rect key="frame" x="20" y="27" width="161" height="55"/>
-                                </variation>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ErN-4e-fwg">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="TOUCHSCREEN">
-                                        <attributes>
-                                            <color key="NSColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                            <font key="NSFont" size="17" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="36"/>
-                                    <rect key="frame" x="181" y="27" width="157" height="55"/>
-                                </variation>
-                            </label>
-                            <button opaque="NO" tag="13" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="foobar" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Dn-WV-KBH" userLabel="xfoo">
-                                <rect key="frame" x="43" y="63" width="59" height="30"/>
-                                <color key="backgroundColor" red="0.40174932070000002" green="0.40174932070000002" blue="0.40174932070000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <accessibility key="accessibilityConfiguration" label="foolabel"/>
-                                <color key="tintColor" red="0.95490500410000001" green="1" blue="0.98627566680000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Button 1">
-                                    <color key="titleShadowColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="40" y="186" width="123" height="47"/>
-                                </variation>
-                            </button>
-                            <button opaque="NO" tag="14" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="foobar" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gvw-hG-88T" userLabel="xfoo">
-                                <rect key="frame" x="43" y="63" width="59" height="30"/>
-                                <color key="backgroundColor" red="0.40174932070000002" green="0.40174932070000002" blue="0.40174932070000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <accessibility key="accessibilityConfiguration" label="foolabel"/>
-                                <color key="tintColor" red="0.95490500410000001" green="1" blue="0.98627566680000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Button 1">
-                                    <color key="titleShadowColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="40" y="241" width="123" height="47"/>
-                                </variation>
-                            </button>
-                            <button opaque="NO" tag="21" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="foobar" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fvq-xL-Hi3" userLabel="xfoo">
-                                <rect key="frame" x="43" y="63" width="59" height="30"/>
-                                <color key="backgroundColor" red="0.40174932070000002" green="0.40174932070000002" blue="0.40174932070000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <accessibility key="accessibilityConfiguration" label="foolabel"/>
-                                <color key="tintColor" red="0.95490500410000001" green="1" blue="0.98627566680000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Button 1">
-                                    <color key="titleShadowColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="197" y="76" width="123" height="47"/>
-                                </variation>
-                            </button>
-                            <button opaque="NO" tag="22" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="foobar" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gLQ-pf-zcL" userLabel="xfoo">
-                                <rect key="frame" x="43" y="63" width="59" height="30"/>
-                                <color key="backgroundColor" red="0.40174932070000002" green="0.40174932070000002" blue="0.40174932070000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <accessibility key="accessibilityConfiguration" label="foolabel"/>
-                                <color key="tintColor" red="0.95490500410000001" green="1" blue="0.98627566680000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Button 1">
-                                    <color key="titleShadowColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="197" y="131" width="123" height="47"/>
-                                </variation>
-                            </button>
-                            <button opaque="NO" tag="23" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="foobar" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d1M-2d-ubU" userLabel="xfoo">
-                                <rect key="frame" x="43" y="63" width="59" height="30"/>
-                                <color key="backgroundColor" red="0.40174932070000002" green="0.40174932070000002" blue="0.40174932070000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <accessibility key="accessibilityConfiguration" label="foolabel"/>
-                                <color key="tintColor" red="0.95490500410000001" green="1" blue="0.98627566680000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Button 1">
-                                    <color key="titleShadowColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="197" y="186" width="123" height="47"/>
-                                </variation>
-                            </button>
-                            <button opaque="NO" tag="24" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="foobar" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VBK-Sp-fay" userLabel="xfoo">
-                                <rect key="frame" x="43" y="63" width="59" height="30"/>
-                                <color key="backgroundColor" red="0.40174932070000002" green="0.40174932070000002" blue="0.40174932070000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <accessibility key="accessibilityConfiguration" label="foolabel"/>
-                                <color key="tintColor" red="0.95490500410000001" green="1" blue="0.98627566680000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Button 1">
-                                    <color key="titleShadowColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="197" y="241" width="123" height="47"/>
-                                </variation>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="BCR-JX-Nb2"/>
-                                <exclude reference="o0o-Ix-Jpl"/>
-                                <exclude reference="xEO-2x-evk"/>
-                                <exclude reference="ErN-4e-fwg"/>
-                                <exclude reference="9Dn-WV-KBH"/>
-                                <exclude reference="gvw-hG-88T"/>
-                                <exclude reference="Fvq-xL-Hi3"/>
-                                <exclude reference="gLQ-pf-zcL"/>
-                                <exclude reference="d1M-2d-ubU"/>
-                                <exclude reference="VBK-Sp-fay"/>
-                            </mask>
-                        </variation>
-                        <variation key="widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="BCR-JX-Nb2"/>
-                                <include reference="o0o-Ix-Jpl"/>
-                                <include reference="xEO-2x-evk"/>
-                                <include reference="ErN-4e-fwg"/>
-                                <include reference="9Dn-WV-KBH"/>
-                                <include reference="gvw-hG-88T"/>
-                                <include reference="Fvq-xL-Hi3"/>
-                                <include reference="gLQ-pf-zcL"/>
-                                <include reference="d1M-2d-ubU"/>
-                                <include reference="VBK-Sp-fay"/>
-                            </mask>
-                        </variation>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9Td-Dw-1fd" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="810" y="260"/>
+            <point key="canvasLocation" x="154.5" y="156"/>
         </scene>
     </scenes>
 </document>
