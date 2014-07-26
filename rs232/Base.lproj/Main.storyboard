@@ -46,7 +46,7 @@
                                 <color key="backgroundColor" red="0.40174932065217395" green="0.40174932065217395" blue="0.40174932065217395" alpha="1" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration" label="foolabel"/>
                                 <color key="tintColor" red="0.95490500408678214" green="1" blue="0.98627566682837808" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Button 1">
+                                <state key="normal" title="Dan Laptop">
                                     <color key="titleShadowColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
@@ -61,7 +61,7 @@
                                 <color key="backgroundColor" red="0.40174932070000002" green="0.40174932070000002" blue="0.40174932070000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration" label="foolabel"/>
                                 <color key="tintColor" red="0.95490500410000001" green="1" blue="0.98627566680000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Button 1">
+                                <state key="normal" title="Mac Air">
                                     <color key="titleShadowColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
@@ -110,7 +110,7 @@
                                 <color key="backgroundColor" red="0.40174932070000002" green="0.40174932070000002" blue="0.40174932070000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration" label="foolabel"/>
                                 <color key="tintColor" red="0.95490500410000001" green="1" blue="0.98627566680000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Button 1">
+                                <state key="normal" title="Input 3">
                                     <color key="titleShadowColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
@@ -125,7 +125,7 @@
                                 <color key="backgroundColor" red="0.40174932070000002" green="0.40174932070000002" blue="0.40174932070000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration" label="foolabel"/>
                                 <color key="tintColor" red="0.95490500410000001" green="1" blue="0.98627566680000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Button 1">
+                                <state key="normal" title="Input 4">
                                     <color key="titleShadowColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
@@ -140,7 +140,7 @@
                                 <color key="backgroundColor" red="0.40174932070000002" green="0.40174932070000002" blue="0.40174932070000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration" label="foolabel"/>
                                 <color key="tintColor" red="0.95490500410000001" green="1" blue="0.98627566680000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Button 1">
+                                <state key="normal" title="Dan Laptop">
                                     <color key="titleShadowColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
@@ -155,7 +155,7 @@
                                 <color key="backgroundColor" red="0.40174932070000002" green="0.40174932070000002" blue="0.40174932070000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration" label="foolabel"/>
                                 <color key="tintColor" red="0.95490500410000001" green="1" blue="0.98627566680000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Button 1">
+                                <state key="normal" title="Mac Air">
                                     <color key="titleShadowColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
@@ -170,7 +170,7 @@
                                 <color key="backgroundColor" red="0.40174932070000002" green="0.40174932070000002" blue="0.40174932070000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration" label="foolabel"/>
                                 <color key="tintColor" red="0.95490500410000001" green="1" blue="0.98627566680000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Button 1">
+                                <state key="normal" title="Input 3">
                                     <color key="titleShadowColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
@@ -185,7 +185,7 @@
                                 <color key="backgroundColor" red="0.40174932070000002" green="0.40174932070000002" blue="0.40174932070000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration" label="foolabel"/>
                                 <color key="tintColor" red="0.95490500410000001" green="1" blue="0.98627566680000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Button 1">
+                                <state key="normal" title="Input 4">
                                     <color key="titleShadowColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
@@ -193,21 +193,6 @@
                                 </variation>
                                 <connections>
                                     <action selector="buttonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="als-Qy-6ul"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="foobar" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="222-NX-crq" userLabel="xfoo">
-                                <rect key="frame" x="43" y="63" width="59" height="30"/>
-                                <color key="backgroundColor" red="0.40174932070000002" green="0.40174932070000002" blue="0.40174932070000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <accessibility key="accessibilityConfiguration" label="foolabel"/>
-                                <color key="tintColor" red="0.95490500410000001" green="1" blue="0.98627566680000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="&lt;-- SWAP -->">
-                                    <color key="titleShadowColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="38" y="300" width="123" height="47"/>
-                                </variation>
-                                <connections>
-                                    <action selector="buttonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nlr-bs-nlV"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="19" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="foobar" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ymX-uT-nnd" userLabel="xfoo">
@@ -240,7 +225,7 @@
                                     <action selector="buttonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RcT-gj-2t1"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="10" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="foobar" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8fe-oK-YDk" userLabel="xfoo">
+                            <button opaque="NO" tag="20" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="foobar" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8fe-oK-YDk" userLabel="xfoo">
                                 <rect key="frame" x="43" y="63" width="59" height="30"/>
                                 <color key="backgroundColor" red="0.40174932070000002" green="0.40174932070000002" blue="0.40174932070000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration" label="foolabel"/>
@@ -291,10 +276,31 @@
                                         <include reference="xnb-PM-olA"/>
                                     </mask>
                                 </variation>
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="-52" y="613" width="430" height="21"/>
+                                </variation>
                                 <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="0.0" y="229" width="640" height="21"/>
                                 </variation>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="foobar" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="222-NX-crq" userLabel="xfoo">
+                                <rect key="frame" x="43" y="63" width="59" height="30"/>
+                                <color key="backgroundColor" red="0.40174932070000002" green="0.40174932070000002" blue="0.40174932070000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <accessibility key="accessibilityConfiguration" label="foolabel"/>
+                                <color key="tintColor" red="0.95490500410000001" green="1" blue="0.98627566680000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="&lt;-- SWAP -->">
+                                    <color key="titleShadowColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="38" y="300" width="123" height="47"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="99" y="301" width="123" height="47"/>
+                                </variation>
+                                <connections>
+                                    <action selector="buttonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nlr-bs-nlV"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="debug" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yTz-Mo-TiD">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -302,6 +308,9 @@
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="176" y="313" width="129" height="21"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="86" y="589" width="129" height="21"/>
                                 </variation>
                             </label>
                         </subviews>
@@ -318,11 +327,11 @@
                                 <exclude reference="l0v-EI-Sqn"/>
                                 <exclude reference="CFW-lw-YnU"/>
                                 <exclude reference="fWS-Hs-BYn"/>
-                                <exclude reference="222-NX-crq"/>
                                 <exclude reference="ymX-uT-nnd"/>
                                 <exclude reference="kQP-vj-TMM"/>
                                 <exclude reference="8fe-oK-YDk"/>
                                 <exclude reference="5Li-0C-FQF"/>
+                                <exclude reference="222-NX-crq"/>
                                 <exclude reference="yTz-Mo-TiD"/>
                             </mask>
                         </variation>
@@ -337,11 +346,11 @@
                                 <include reference="l0v-EI-Sqn"/>
                                 <include reference="CFW-lw-YnU"/>
                                 <include reference="fWS-Hs-BYn"/>
-                                <include reference="222-NX-crq"/>
                                 <include reference="ymX-uT-nnd"/>
                                 <include reference="kQP-vj-TMM"/>
                                 <include reference="8fe-oK-YDk"/>
                                 <include reference="5Li-0C-FQF"/>
+                                <include reference="222-NX-crq"/>
                                 <include reference="yTz-Mo-TiD"/>
                             </mask>
                         </variation>

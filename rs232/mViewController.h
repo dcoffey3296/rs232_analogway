@@ -25,6 +25,8 @@
     BOOL screen2Frozen;
     BOOL screen1Logo;
     BOOL screen2Logo;
+    
+    NSDictionary *lookup;
 }
 
 

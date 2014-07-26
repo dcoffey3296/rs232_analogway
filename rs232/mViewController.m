@@ -43,6 +43,24 @@
     screen1Logo = false;
     screen2Logo = false;
     
+    lookup = @{
+         [NSNumber numberWithInt:0] : @"SWAP", // swap
+         [NSNumber numberWithInt:10] : @"??10", // logo 1
+         [NSNumber numberWithInt:11] : @"0,1,1,1PRinp0,1PUscu0,1GCtak",
+         [NSNumber numberWithInt:12] : @"0,1,1,2PRinp0,1PUscu0,1GCtak",
+         [NSNumber numberWithInt:13] : @"0,1,1,3PRinp0,1PUscu0,1GCtak",
+         [NSNumber numberWithInt:14] : @"0,1,1,4PRinp0,1PUscu0,1GCtak",
+         [NSNumber numberWithInt:19] : @"1GCfsc1,1PUscu1", // freeze 1
+         [NSNumber numberWithInt:20] : @"??20", // logo 2
+         [NSNumber numberWithInt:21] : @"1,1,1,1PRinp1,1PUscu1,1GCtak",
+         [NSNumber numberWithInt:22] : @"1,1,1,2PRinp1,1PUscu1,1GCtak",
+         [NSNumber numberWithInt:23] : @"1,1,1,3PRinp1,1PUscu1,1GCtak",
+         [NSNumber numberWithInt:24] : @"1,1,1,4PRinp1,1PUscu1,1GCtak",
+         [NSNumber numberWithInt:29] : @"??29", // freeze 2
+    };
+    
+    [self checkButtons];
+    
 }
 
 - (void)viewDidUnload
@@ -61,23 +79,10 @@
 - (IBAction)buttonPress:(id)sender {
     NSString *result;
     
-    NSDictionary *lookup = @{
-         [NSNumber numberWithInt:0] : @"??0", // swap
-         [NSNumber numberWithInt:10] : @"??10", // logo 1
-         [NSNumber numberWithInt:11] : @"0,1,1,1PRinp0,1PUscu0,1GCtak",
-         [NSNumber numberWithInt:12] : @"??12",
-         [NSNumber numberWithInt:13] : @"??13",
-         [NSNumber numberWithInt:14] : @"??14",
-         [NSNumber numberWithInt:19] : @"0GCfsc1", // freeze 1
-         [NSNumber numberWithInt:20] : @"??20", // logo 2
-         [NSNumber numberWithInt:21] : @"1,1,1,1PRinp1,1PUscu1,1GCtak",
-         [NSNumber numberWithInt:22] : @"??22",
-         [NSNumber numberWithInt:23] : @"??23",
-         [NSNumber numberWithInt:24] : @"??24",
-         [NSNumber numberWithInt:29] : @"??29", // freeze 2
-    };
-
     NSNumber *clicked = [NSNumber numberWithInt:[sender tag]];
+    // clear debug text
+    debugText.text = @"";
+    
     switch ([clicked integerValue]) {
         case 0: {
             // swap
@@ -106,27 +111,70 @@
         }
         case 10: {
             // logo 1 toggle
+            if (screen1Logo == false)
+            {
+                result = [self sendCommand:@"0,1CTqfa"];
+                screen1Logo = true;
+            }
+            else
+            {
+                result = [self sendCommand:@"0,0CTqfa"];
+                screen1Logo = false;
+            }
+            
             break;
         }
         case 19: {
             // freeze 1 toggle
+            if (screen1Frozen == false)
+            {
+                result = [self sendCommand:@"0,1GCfsc0,1GCfsc"];
+                screen1Frozen = true;
+            }
+            else
+            {
+                result = [self sendCommand:@"0,0GCfsc0,0GCfsc"];
+                screen1Frozen = false;
+            }
             break;
         }
         case 20: {
             // logo 2 toggle
+            if (screen2Logo == false)
+            {
+                result = [self sendCommand:@"1,1CTqfa"];
+                screen2Logo = true;
+            }
+            else
+            {
+                result = [self sendCommand:@"1,0CTqfa"];
+                screen2Logo = false;
+            }
+
             break;
         }
         case 29: {
             // freeze 2 toggle
+            if (screen2Frozen == false)
+            {
+                result = [self sendCommand:@"1,1GCfsc1,1GCfsc"];
+                screen2Frozen = true;
+            }
+            else
+            {
+                result = [self sendCommand:@"1,0GCfsc1,0GCfsc"];
+                screen2Frozen = false;
+            }
             break;
         }
         
         // handle normal inputs
         default: {
+            // get the screen num and source
             NSNumber *input = [NSNumber numberWithInt:([clicked integerValue] % 10)];
-            
             NSNumber *screen = [NSNumber numberWithInt:(([clicked integerValue] / 10) % 10)];
             
+            // set the last source to the last remembered
             if ([screen integerValue] == 1)
             {
                 lastScreen1 = input;
@@ -139,7 +187,7 @@
             // send the command
             result = [self sendCommand:lookup[clicked]];
             
-            NSLog(@"Default Screen: %i, input %i", [screen integerValue], [input integerValue]);
+            NSLog(@"Default Button Press.  Screen: %i, input %i", [screen integerValue], [input integerValue]);
             
             break;
         }
@@ -152,15 +200,65 @@
 //    [rscMgr write:someInt Length:[lookup[[NSNumber numberWithInt:clicked]] length]];
 //    [rscMgr writeString:lookup[[NSNumber numberWithInt:clicked]]];
     
-     texty.text = lookup[clicked];
-     debugText.text = result;
+    
+}
+
+- (BOOL) checkInput: (NSNumber *) number {
+    // try catch to avoid error if analog way is not connected
+    @try {
+        NSString *temp = [NSString stringWithFormat:@"%d,1,ISsva", [number integerValue]];
+        NSString *response = [self sendCommand:temp];
+        NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
+    
+   
+        // here
+        NSNumber *num = [f numberFromString:[response substringFromIndex:[response length] - 1]];
+        
+        NSLog(@"checkInput = %i is %i", [number integerValue], [num integerValue]);
+        
+        if ([number integerValue] == 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    @catch (NSException *e ){
+        return false;
+    }
+    
 }
 
 - (NSString *) sendCommand: (NSString *) command {
+    NSLog(@"In send command, sending: %@", command);
+    texty.text = command;
     [rscMgr writeString:command];
-    return [rscMgr getStringFromBytesAvailable];
+    NSString *response = [rscMgr getStringFromBytesAvailable];
+    NSLog(@"Response from Analog Way: '%@'", response);
+    debugText.text = response;
+    return response;
 }
 
+- (void) checkButtons
+{
+    NSArray *buttonsToCheck = @[@1, @2, @3, @4];
+    
+    for (NSNumber *num in buttonsToCheck)
+    {
+        NSLog(@"Checking %i", [num integerValue]);
+        if ([self checkInput:num] == false)
+        {
+            NSLog(@"removing %i", [num integerValue]);
+            UIView *aView = [self.view viewWithTag:10 + [num integerValue]];
+            [aView removeFromSuperview];
+            aView = [self.view viewWithTag:20 + [num integerValue]];
+            [aView removeFromSuperview];
+        }
+        
+    }
+}
 
 #pragma mark - RscMgrDelegate methods
 
@@ -169,6 +267,11 @@
 
     [rscMgr setBaud:115200];
     [rscMgr open];
+    
+    [self checkButtons];
+    
+    [self sendCommand:lookup[[NSNumber numberWithInt:11]]];
+    [self sendCommand:lookup[[NSNumber numberWithInt:22]]];
 }
 
 - (void) cableDisconnected {
