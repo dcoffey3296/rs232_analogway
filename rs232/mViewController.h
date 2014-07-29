@@ -21,6 +21,7 @@
     NSString *lastResult;
     NSNumber *lastScreen1;
     NSNumber *lastScreen2;
+    
     BOOL screen1Frozen;
     BOOL screen2Frozen;
     BOOL screen1Logo;

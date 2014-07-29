@@ -19,8 +19,11 @@
 @synthesize debugText;
 @synthesize button1;
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSLog(@"View loaded");
+
     // Do any additional setup after loading the view, typically from a nib.
     
     // Create and initialize our RedparkSerialCable Manager for communicating
@@ -59,7 +62,8 @@
          [NSNumber numberWithInt:29] : @"??29", // freeze 2
     };
     
-    [self checkButtons];
+    
+   // [self checkButtons];
     
 }
 
@@ -115,11 +119,15 @@
             {
                 result = [self sendCommand:@"0,1CTqfa"];
                 screen1Logo = true;
+                UIButton *btn = (UIButton*)sender;
+                [btn setBackgroundColor:[UIColor blueColor]];
             }
             else
             {
                 result = [self sendCommand:@"0,0CTqfa"];
                 screen1Logo = false;
+                UIButton *btn = (UIButton*)sender;
+                [btn setBackgroundColor:[UIColor colorWithRed:0.4 green:0.4 blue:0.4 alpha:100]];
             }
             
             break;
@@ -130,11 +138,15 @@
             {
                 result = [self sendCommand:@"0,1GCfsc0,1GCfsc"];
                 screen1Frozen = true;
+                UIButton *btn = (UIButton*)sender;
+                [btn setBackgroundColor:[UIColor blueColor]];
             }
             else
             {
                 result = [self sendCommand:@"0,0GCfsc0,0GCfsc"];
                 screen1Frozen = false;
+                UIButton *btn = (UIButton*)sender;
+                [btn setBackgroundColor:[UIColor colorWithRed:0.4 green:0.4 blue:0.4 alpha:100]];
             }
             break;
         }
@@ -144,11 +156,15 @@
             {
                 result = [self sendCommand:@"1,1CTqfa"];
                 screen2Logo = true;
+                UIButton *btn = (UIButton*)sender;
+                [btn setBackgroundColor:[UIColor blueColor]];
             }
             else
             {
                 result = [self sendCommand:@"1,0CTqfa"];
                 screen2Logo = false;
+                UIButton *btn = (UIButton*)sender;
+                [btn setBackgroundColor:[UIColor colorWithRed:0.4 green:0.4 blue:0.4 alpha:100]];
             }
 
             break;
@@ -159,36 +175,52 @@
             {
                 result = [self sendCommand:@"1,1GCfsc1,1GCfsc"];
                 screen2Frozen = true;
+                UIButton *btn = (UIButton*)sender;
+                [btn setBackgroundColor:[UIColor blueColor]];
             }
             else
             {
                 result = [self sendCommand:@"1,0GCfsc1,0GCfsc"];
                 screen2Frozen = false;
+                UIButton *btn = (UIButton*)sender;
+                [btn setBackgroundColor:[UIColor colorWithRed:0.4 green:0.4 blue:0.4 alpha:100]];
             }
             break;
         }
         
         // handle normal inputs
         default: {
-            // get the screen num and source
-            NSNumber *input = [NSNumber numberWithInt:([clicked integerValue] % 10)];
-            NSNumber *screen = [NSNumber numberWithInt:(([clicked integerValue] / 10) % 10)];
             
-            // set the last source to the last remembered
-            if ([screen integerValue] == 1)
+            // first check if we're making changes to both screens (31-34)
+            if ([clicked integerValue] > 30)
             {
-                lastScreen1 = input;
+                // get the source number
+                NSNumber *input = [NSNumber numberWithInt:([clicked integerValue] % 10)];
+                
             }
+            // else handle normal source changes
             else
             {
-                lastScreen2 = input;
+                // get the screen num and source
+                NSNumber *input = [NSNumber numberWithInt:([clicked integerValue] % 10)];
+                NSNumber *screen = [NSNumber numberWithInt:(([clicked integerValue] / 10) % 10)];
+                
+                // set the last source to the last remembered
+                if ([screen integerValue] == 1)
+                {
+                    lastScreen1 = input;
+                }
+                else
+                {
+                    lastScreen2 = input;
+                }
+                
+                // send the command
+                result = [self sendCommand:lookup[clicked]];
+                
+                NSLog(@"Default Button Press.  Screen: %i, input %i", [screen integerValue], [input integerValue]);
+                
             }
-            
-            // send the command
-            result = [self sendCommand:lookup[clicked]];
-            
-            NSLog(@"Default Button Press.  Screen: %i, input %i", [screen integerValue], [input integerValue]);
-            
             break;
         }
     }
@@ -241,6 +273,7 @@
     return response;
 }
 
+// check inputs to see if the buttons should be on the screen
 - (void) checkButtons
 {
     NSArray *buttonsToCheck = @[@1, @2, @3, @4];
@@ -250,13 +283,13 @@
         NSLog(@"Checking %i", [num integerValue]);
         if ([self checkInput:num] == false)
         {
-            NSLog(@"removing %i", [num integerValue]);
+            NSLog(@"removing %i", 10 + [num integerValue]);
             UIView *aView = [self.view viewWithTag:10 + [num integerValue]];
             [aView removeFromSuperview];
+            NSLog(@"removing %i", 20 + [num integerValue]);
             aView = [self.view viewWithTag:20 + [num integerValue]];
             [aView removeFromSuperview];
         }
-        
     }
 }
 
@@ -267,9 +300,7 @@
 
     [rscMgr setBaud:115200];
     [rscMgr open];
-    
-    [self checkButtons];
-    
+        
     [self sendCommand:lookup[[NSNumber numberWithInt:11]]];
     [self sendCommand:lookup[[NSNumber numberWithInt:22]]];
 }
