@@ -17,7 +17,7 @@
 @synthesize texty;
 @synthesize connectLabel;
 @synthesize debugText;
-@synthesize button1;
+//@synthesize button1;
 
 
 - (void)viewDidLoad {
@@ -39,8 +39,6 @@
 //    [rscMgr	setParity:(ParityType)value];
     [rscMgr setStopBits:(StopBitsType)1];
     
-    lastScreen1 = [NSNumber numberWithInt:1];
-    lastScreen2 = [NSNumber numberWithInt:2];
     screen1Frozen = false;
     screen2Frozen = false;
     screen1Logo = false;
@@ -62,9 +60,12 @@
          [NSNumber numberWithInt:29] : @"??29", // freeze 2
     };
     
-    
-   // [self checkButtons];
-    
+    [self sendCommand:lookup[[NSNumber numberWithInt:11]]];
+    [self turnButton:(UIButton *)[self.view viewWithTag:11] color:@"red"];
+    lastScreen1 = @11;
+    [self sendCommand:lookup[[NSNumber numberWithInt:22]]];
+    [self turnButton:(UIButton *)[self.view viewWithTag:22] color:@"red"];
+    lastScreen2 = @22;
 }
 
 - (void)viewDidUnload
@@ -85,29 +86,36 @@
     
     NSNumber *clicked = [NSNumber numberWithInt:[sender tag]];
     // clear debug text
-    debugText.text = @"";
+//    debugText.text = @"";
     
     switch ([clicked integerValue]) {
         case 0: {
             // swap
             NSLog(@"Swap before, last1 = %d, last2 = %d", [lastScreen1 integerValue], [lastScreen2 integerValue]);
-
-            NSNumber *foo = [NSNumber numberWithInt:(10 + [lastScreen2 integerValue])];
-
-            result = [self sendCommand:lookup[foo]];
             
-            NSLog(@"Swap command1, foo = %i sending %@", [foo integerValue], lookup[foo]);
-            NSLog(@"result of swap1 = %@", result);
-            foo = [NSNumber numberWithInt:(20 + [lastScreen1 integerValue])];
-            result = [self sendCommand:lookup[foo]];
-            NSLog(@"Swap command2, sending %@", lookup[foo]);
-            NSLog(@"result of swap2 = %@", result);
-            
+            // set colors to gray
+            [self turnButton:(UIButton *)[self.view viewWithTag:[lastScreen1 intValue]] color:@"gray"];
+            [self turnButton:(UIButton *)[self.view viewWithTag:[lastScreen2 intValue]] color:@"gray"];
 
+            debugText.text = [NSString stringWithFormat:@" last1 = %d, last2 = %d", [lastScreen1 intValue], [lastScreen2 intValue]];
+            
             // swap our mental map
-            NSNumber *temp = lastScreen1;
-            lastScreen1 = lastScreen2;
+            NSNumber *temp = [NSNumber numberWithInt:([lastScreen1 intValue] % 10) + 20];
+            lastScreen1 = [NSNumber numberWithInt:([lastScreen2 intValue] % 10) + 10];
             lastScreen2 = temp;
+            
+            debugText.text = [NSString stringWithFormat:@" last1 = %d, last2 = %d", [lastScreen1 intValue], [lastScreen2 intValue]];
+           
+            result = [self sendCommand:lookup[lastScreen1]];
+            
+            NSLog(@"Swap command1, foo = %i sending %@", [lastScreen1 integerValue], lookup[lastScreen1]);
+            
+            result = [self sendCommand:lookup[lastScreen2]];
+            NSLog(@"Swap command2, sending %@", lookup[lastScreen2]);
+            
+            [self turnButton:(UIButton *)[self.view viewWithTag:[lastScreen1 intValue]] color:@"red"];
+            
+            [self turnButton:(UIButton *)[self.view viewWithTag:[lastScreen2 intValue]] color:@"red"];
             
             NSLog(@"Swap complete, last1 = %i, last2 = %i", [lastScreen1 integerValue], [lastScreen2 integerValue]);
             
@@ -120,14 +128,14 @@
                 result = [self sendCommand:@"0,1CTqfa"];
                 screen1Logo = true;
                 UIButton *btn = (UIButton*)sender;
-                [btn setBackgroundColor:[UIColor blueColor]];
+                [self turnButton:btn color:@"blue"];
             }
             else
             {
                 result = [self sendCommand:@"0,0CTqfa"];
                 screen1Logo = false;
                 UIButton *btn = (UIButton*)sender;
-                [btn setBackgroundColor:[UIColor colorWithRed:0.4 green:0.4 blue:0.4 alpha:100]];
+                [self turnButton:btn color:@"gray"];
             }
             
             break;
@@ -139,34 +147,34 @@
                 result = [self sendCommand:@"0,1GCfsc0,1GCfsc"];
                 screen1Frozen = true;
                 UIButton *btn = (UIButton*)sender;
-                [btn setBackgroundColor:[UIColor blueColor]];
+                [self turnButton:btn color:@"blue"];
             }
             else
             {
                 result = [self sendCommand:@"0,0GCfsc0,0GCfsc"];
                 screen1Frozen = false;
                 UIButton *btn = (UIButton*)sender;
-                [btn setBackgroundColor:[UIColor colorWithRed:0.4 green:0.4 blue:0.4 alpha:100]];
+                [self turnButton:btn color:@"gray"];
             }
             break;
         }
         case 20: {
             // logo 2 toggle
-            if (screen2Logo == false)
+                        if (screen2Logo == false)
             {
                 result = [self sendCommand:@"1,1CTqfa"];
                 screen2Logo = true;
                 UIButton *btn = (UIButton*)sender;
-                [btn setBackgroundColor:[UIColor blueColor]];
+                [self turnButton:btn color:@"blue"];
             }
             else
             {
                 result = [self sendCommand:@"1,0CTqfa"];
                 screen2Logo = false;
                 UIButton *btn = (UIButton*)sender;
-                [btn setBackgroundColor:[UIColor colorWithRed:0.4 green:0.4 blue:0.4 alpha:100]];
+                [self turnButton:btn color:@"gray"];
             }
-
+            
             break;
         }
         case 29: {
@@ -176,15 +184,87 @@
                 result = [self sendCommand:@"1,1GCfsc1,1GCfsc"];
                 screen2Frozen = true;
                 UIButton *btn = (UIButton*)sender;
-                [btn setBackgroundColor:[UIColor blueColor]];
+                [self turnButton:btn color:@"blue"];
             }
             else
             {
                 result = [self sendCommand:@"1,0GCfsc1,0GCfsc"];
                 screen2Frozen = false;
                 UIButton *btn = (UIButton*)sender;
-                [btn setBackgroundColor:[UIColor colorWithRed:0.4 green:0.4 blue:0.4 alpha:100]];
+                [self turnButton:btn color:@"gray"];
             }
+            break;
+        }
+        case 30: {
+            // logo 1 toggle
+            if (screen1Logo == false)
+            {
+                result = [self sendCommand:@"0,1CTqfa"];
+                screen1Logo = true;
+                UIButton *btn = (UIButton *)[self.view viewWithTag:20];
+                [self turnButton:btn color:@"blue"];
+            }
+            else
+            {
+                result = [self sendCommand:@"0,0CTqfa"];
+                screen1Logo = false;
+                UIButton *btn = (UIButton *)[self.view viewWithTag:20];
+                [self turnButton:btn color:@"gray"];
+            }
+            
+            // logo 2 toggle
+            if (screen2Logo == false)
+            {
+                result = [self sendCommand:@"1,1CTqfa"];
+                screen2Logo = true;
+                UIButton *btn = (UIButton *)[self.view viewWithTag:10];
+                [self turnButton:btn color:@"blue"];
+            }
+            else
+            {
+                result = [self sendCommand:@"1,0CTqfa"];
+                screen2Logo = false;
+                UIButton *btn = (UIButton *)[self.view viewWithTag:10];
+               [self turnButton:btn color:@"gray"];
+            }
+            
+            
+
+            break;
+        }
+        case 39: {
+            // freeze projector
+            if (screen1Frozen == false)
+            {
+                result = [self sendCommand:@"0,1GCfsc0,1GCfsc"];
+                screen1Frozen = true;
+                UIButton *btn =(UIButton *)[self.view viewWithTag:19];
+                [self turnButton:btn color:@"blue"];
+            }
+            else
+            {
+                result = [self sendCommand:@"0,0GCfsc0,0GCfsc"];
+                screen1Frozen = false;
+                UIButton *btn = (UIButton *)[self.view viewWithTag:19];
+                [self turnButton:btn color:@"gray"];
+            }
+            
+            // freeze touchscreen
+            if (screen2Frozen == false)
+            {
+                result = [self sendCommand:@"1,1GCfsc1,1GCfsc"];
+                screen2Frozen = true;
+                UIButton *btn = (UIButton *)[self.view viewWithTag:29];
+                [self turnButton:btn color:@"blue"];
+            }
+            else
+            {
+                result = [self sendCommand:@"1,0GCfsc1,0GCfsc"];
+                screen2Frozen = false;
+                UIButton *btn = (UIButton *)[self.view viewWithTag:29];
+                [self turnButton:btn color:@"gray"];
+            }
+            
             break;
         }
         
@@ -197,6 +277,26 @@
                 // get the source number
                 NSNumber *input = [NSNumber numberWithInt:([clicked integerValue] % 10)];
                 
+                // reset the previously red buttons
+                [self turnButton:(UIButton *)[self.view viewWithTag: [lastScreen1 intValue]] color:@"gray"];
+                [self turnButton:(UIButton *)[self.view viewWithTag: [lastScreen2 intValue]] color:@"gray"];
+                
+                // remember which sources
+                lastScreen1 = [NSNumber numberWithInt: (10 + [input integerValue])];
+                lastScreen2 = [NSNumber numberWithInt: (20 + [input integerValue])];
+                
+                // set the new colors as red
+                [self turnButton:(UIButton *)[self.view viewWithTag:  [lastScreen1 intValue]] color:@"red"];
+                [self turnButton:(UIButton *)[self.view viewWithTag: [lastScreen2 intValue]] color:@"red"];
+                
+                // send the button to both screens
+                result = [self sendCommand:lookup[lastScreen1]];
+                NSLog(@"Double Button Press.  Screen: %i, input %i", 1, [lastScreen1 integerValue]);
+
+                result = [self sendCommand:lookup[lastScreen2]];
+                NSLog(@"Double Button Press.  Screen: %i, input %i", 2, [lastScreen2 integerValue]);
+                
+                
             }
             // else handle normal source changes
             else
@@ -205,18 +305,24 @@
                 NSNumber *input = [NSNumber numberWithInt:([clicked integerValue] % 10)];
                 NSNumber *screen = [NSNumber numberWithInt:(([clicked integerValue] / 10) % 10)];
                 
+               
                 // set the last source to the last remembered
                 if ([screen integerValue] == 1)
                 {
-                    lastScreen1 = input;
+                    [self turnButton:(UIButton *)[self.view viewWithTag:[lastScreen1 intValue]] color:@"gray"];
+                    lastScreen1 = [NSNumber numberWithInteger:(10 + [input intValue])];
                 }
                 else
                 {
-                    lastScreen2 = input;
+                    [self turnButton:(UIButton *)[self.view viewWithTag:[lastScreen2 intValue]] color:@"gray"];
+                    lastScreen2 = [NSNumber numberWithInteger:(20 + [input intValue])];
+                    
                 }
                 
                 // send the command
                 result = [self sendCommand:lookup[clicked]];
+                UIButton *btn = (UIButton*)sender;
+                [self turnButton:btn color:@"red"];
                 
                 NSLog(@"Default Button Press.  Screen: %i, input %i", [screen integerValue], [input integerValue]);
                 
@@ -243,10 +349,14 @@
         NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
     
    
-        // here
+        // hered
+        debugText.text = [NSString stringWithFormat:@"command: '%@'", response];
+        return true;
         NSNumber *num = [f numberFromString:[response substringFromIndex:[response length] - 1]];
         
         NSLog(@"checkInput = %i is %i", [number integerValue], [num integerValue]);
+        debugText.text = @"in checkinput...";
+        debugText.text = [NSString stringWithFormat:@"checkInput = %i is %i", [number integerValue], [num integerValue]];
         
         if ([number integerValue] == 0)
         {
@@ -258,7 +368,7 @@
         }
     }
     @catch (NSException *e ){
-        return false;
+        debugText.text = [NSString stringWithFormat:@"error: %@", e];
     }
     
 }
@@ -266,10 +376,14 @@
 - (NSString *) sendCommand: (NSString *) command {
     NSLog(@"In send command, sending: %@", command);
     texty.text = command;
+    // clear buffer
+    [rscMgr getReadBytesAvailable];
     [rscMgr writeString:command];
-    NSString *response = [rscMgr getStringFromBytesAvailable];
+//    [NSThread sleepForTimeInterval:0.5f];
+
+    NSString *response = [NSString stringWithFormat:@"response: '%@'",[rscMgr getStringFromBytesAvailable]];
     NSLog(@"Response from Analog Way: '%@'", response);
-    debugText.text = response;
+//    debugText.text = response;
     return response;
 }
 
@@ -293,6 +407,26 @@
     }
 }
 
+- (void) turnButton: (UIButton*) button color:(NSString*) color
+{
+    if ([color isEqualToString:@"red"])
+    {
+        // red
+        [button setBackgroundColor:[UIColor colorWithRed:0.89 green:0.0 blue:0.0 alpha:90]];
+    }
+    else if ([color isEqualToString:@"gray"])
+    {
+        // gray
+        [button setBackgroundColor:[UIColor colorWithRed:0.4 green:0.4 blue:0.4 alpha:100]];
+    }
+    else if ([color isEqualToString:@"blue"])
+    {
+        // blue
+        [button setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.89 alpha:100]];
+        
+    }
+}
+
 #pragma mark - RscMgrDelegate methods
 
 - (void) cableConnected:(NSString *)protocol {
@@ -300,9 +434,15 @@
 
     [rscMgr setBaud:115200];
     [rscMgr open];
-        
+    //[self checkButtons];
+
+    
     [self sendCommand:lookup[[NSNumber numberWithInt:11]]];
+    [self turnButton:(UIButton *)[self.view viewWithTag:11] color:@"red"];
+    lastScreen1 = @11;
     [self sendCommand:lookup[[NSNumber numberWithInt:22]]];
+    [self turnButton:(UIButton *)[self.view viewWithTag:22] color:@"red"];
+    lastScreen2 = @22;
 }
 
 - (void) cableDisconnected {

@@ -36,9 +36,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *connectLabel;
 @property (weak, nonatomic) IBOutlet UILabel *debugText;
 
-@property (weak, nonatomic) IBOutlet UIButton *button1;
+//@property (weak, nonatomic) IBOutlet UIButton *button1;
 
 - (IBAction)buttonPress:(id)sender;
+- (void) turnButton: (UIButton*) button color:(NSString*) color;
+
 
 
 
