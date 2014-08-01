@@ -32,9 +32,9 @@
 
 
 // set up my buttons
-@property (weak, nonatomic) IBOutlet UILabel *texty;
+//@property (weak, nonatomic) IBOutlet UILabel *texty;
 @property (weak, nonatomic) IBOutlet UILabel *connectLabel;
-@property (weak, nonatomic) IBOutlet UILabel *debugText;
+//@property (weak, nonatomic) IBOutlet UILabel *debugText;
 
 //@property (weak, nonatomic) IBOutlet UIButton *button1;
 

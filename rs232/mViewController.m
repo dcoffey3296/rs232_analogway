@@ -14,9 +14,9 @@
 
 @implementation mViewController
 
-@synthesize texty;
+//@synthesize texty;
 @synthesize connectLabel;
-@synthesize debugText;
+//@synthesize debugText;
 //@synthesize button1;
 
 
@@ -97,14 +97,14 @@
             [self turnButton:(UIButton *)[self.view viewWithTag:[lastScreen1 intValue]] color:@"gray"];
             [self turnButton:(UIButton *)[self.view viewWithTag:[lastScreen2 intValue]] color:@"gray"];
 
-            debugText.text = [NSString stringWithFormat:@" last1 = %d, last2 = %d", [lastScreen1 intValue], [lastScreen2 intValue]];
+//            debugText.text = [NSString stringWithFormat:@" last1 = %d, last2 = %d", [lastScreen1 intValue], [lastScreen2 intValue]];
             
             // swap our mental map
             NSNumber *temp = [NSNumber numberWithInt:([lastScreen1 intValue] % 10) + 20];
             lastScreen1 = [NSNumber numberWithInt:([lastScreen2 intValue] % 10) + 10];
             lastScreen2 = temp;
             
-            debugText.text = [NSString stringWithFormat:@" last1 = %d, last2 = %d", [lastScreen1 intValue], [lastScreen2 intValue]];
+//            debugText.text = [NSString stringWithFormat:@" last1 = %d, last2 = %d", [lastScreen1 intValue], [lastScreen2 intValue]];
            
             result = [self sendCommand:lookup[lastScreen1]];
             
@@ -350,13 +350,13 @@
     
    
         // hered
-        debugText.text = [NSString stringWithFormat:@"command: '%@'", response];
+//        debugText.text = [NSString stringWithFormat:@"command: '%@'", response];
         return true;
         NSNumber *num = [f numberFromString:[response substringFromIndex:[response length] - 1]];
         
         NSLog(@"checkInput = %i is %i", [number integerValue], [num integerValue]);
-        debugText.text = @"in checkinput...";
-        debugText.text = [NSString stringWithFormat:@"checkInput = %i is %i", [number integerValue], [num integerValue]];
+//        debugText.text = @"in checkinput...";
+//        debugText.text = [NSString stringWithFormat:@"checkInput = %i is %i", [number integerValue], [num integerValue]];
         
         if ([number integerValue] == 0)
         {
@@ -368,14 +368,14 @@
         }
     }
     @catch (NSException *e ){
-        debugText.text = [NSString stringWithFormat:@"error: %@", e];
+//        debugText.text = [NSString stringWithFormat:@"error: %@", e];
     }
     
 }
 
 - (NSString *) sendCommand: (NSString *) command {
     NSLog(@"In send command, sending: %@", command);
-    texty.text = command;
+//    texty.text = command;
     // clear buffer
     [rscMgr getReadBytesAvailable];
     [rscMgr writeString:command];
